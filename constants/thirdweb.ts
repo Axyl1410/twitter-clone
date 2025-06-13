@@ -43,3 +43,5 @@ export const POLYGON_ZKEVM_CARDONA_TESTNET = defineChain({
   },
   testnet: true,
 });
+
+export const FORMASCAN_URL = "https://explorer.sketchpad-1.forma.art";

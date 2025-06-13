@@ -10,5 +10,3 @@ const secretKey = process.env.THIRDWEB_SECRET_KEY;
 export const client = createThirdwebClient(
   secretKey ? { secretKey } : { clientId },
 );
-
-export const FORMASCAN_URL = "https://explorer.sketchpad-1.forma.art";

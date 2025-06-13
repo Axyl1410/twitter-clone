@@ -37,7 +37,7 @@ export const WalletConnectButton = React.memo(() => {
       unsubscribeAccount();
       unsubscribeChain();
     };
-  }, [wallet]);
+  }, []);
 
   const wallets = useMemo(
     () => [
@@ -54,7 +54,6 @@ export const WalletConnectButton = React.memo(() => {
   );
 
   const handleConnect = useCallback(async () => {
-    console.log("connect");
     await connect({
       client: client,
       chain: POLYGON_ZKEVM_CARDONA_TESTNET,
@@ -63,17 +62,16 @@ export const WalletConnectButton = React.memo(() => {
       size: "compact",
       wallets: wallets,
     });
-  }, [connect, wallets]);
+  }, [,]);
 
   const handleDetail = useCallback(async () => {
-    console.log("detail");
     detailsModal.open({
       client: client,
       chains: [POLYGON_ZKEVM_CARDONA_TESTNET],
       theme: "light",
       hideSwitchWallet: true,
     });
-  }, [detailsModal]);
+  }, []);
 
   const handleSwitch = useCallback(async () => {
     console.log("switch");
@@ -88,7 +86,7 @@ export const WalletConnectButton = React.memo(() => {
         "Wallet does not support switching chain or wallet is not connected.",
       );
     }
-  }, [wallet]);
+  }, []);
 
   return (
     <>

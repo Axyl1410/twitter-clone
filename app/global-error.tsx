@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Github, RefreshCcw } from "lucide-react";
 
 export default function GlobalError({
   error,
@@ -21,12 +22,18 @@ export default function GlobalError({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="cursor-pointer">Report Error on GitHub</Button>
+              <Button className="flex cursor-pointer items-center gap-2">
+                {/* 'Github' logo is deprecated. */}
+                <Github className="h-4 w-4" />
+                Report Error on GitHub
+              </Button>
             </a>
             <Button
-              className="cursor-pointer bg-sky-500 hover:bg-sky-600"
+              className="flex cursor-pointer items-center gap-2"
               onClick={() => window.location.reload()}
+              variant={"outline"}
             >
+              <RefreshCcw className="h-4 w-4" />
               Refresh
             </Button>
           </div>
