@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import icon from "@/public/404.json";
+import icon from "@/public/assets/lotties/404.json";
 import Lottie from "lottie-react";
 import Link from "next/link";
 

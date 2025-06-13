@@ -1,5 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@font-face {
+  font-family: "Formula";
+  src: url("../public/assets/fonts/formula/PPFormula-NarrowRegular.ttf");
+}
+
 /*
   ---break---
 */
@@ -24,6 +30,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
+    font-family: "Formula", system-ui, sans-serif;
     border-color: var(--color-gray-200, currentcolor);
   }
 }
