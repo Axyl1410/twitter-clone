@@ -15,7 +15,7 @@ import { AccountButton } from "./account-button";
 import { ConnectButton } from "./connect-button";
 import { SwitchNetworkButton } from "./switch-network-button";
 
-export const WalletConnectButton = React.memo(() => {
+const WalletConnectButtonComponent = () => {
   const { connect } = useConnectModal();
   const account = useActiveAccount();
   const detailsModal = useWalletDetailsModal();
@@ -99,4 +99,8 @@ export const WalletConnectButton = React.memo(() => {
       )}
     </>
   );
-});
+};
+
+WalletConnectButtonComponent.displayName = "WalletConnectButton";
+
+export const WalletConnectButton = React.memo(WalletConnectButtonComponent);
