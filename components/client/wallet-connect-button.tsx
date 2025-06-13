@@ -37,7 +37,7 @@ const WalletConnectButtonComponent = () => {
       unsubscribeAccount();
       unsubscribeChain();
     };
-  }, []);
+  }, [wallet]);
 
   const wallets = useMemo(
     () => [
@@ -62,7 +62,7 @@ const WalletConnectButtonComponent = () => {
       size: "compact",
       wallets: wallets,
     });
-  }, [,]);
+  }, [connect, wallets]);
 
   const handleDetail = useCallback(async () => {
     detailsModal.open({
@@ -71,7 +71,7 @@ const WalletConnectButtonComponent = () => {
       theme: "light",
       hideSwitchWallet: true,
     });
-  }, []);
+  }, [detailsModal]);
 
   const handleSwitch = useCallback(async () => {
     console.log("switch");
@@ -86,7 +86,7 @@ const WalletConnectButtonComponent = () => {
         "Wallet does not support switching chain or wallet is not connected.",
       );
     }
-  }, []);
+  }, [wallet]);
 
   return (
     <>
