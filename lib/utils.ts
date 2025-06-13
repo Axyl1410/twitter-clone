@@ -14,7 +14,7 @@ export function assertValue<T>(v: T | undefined, errorMessage: string): T {
 }
 
 export const formatAddress = (address: string) => {
-  return `${address.substring(0, 6)}...${address.substring(
+  return `${address.substring(0, 4)}...${address.substring(
     address.length - 4,
   )}`;
 };

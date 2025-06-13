@@ -3,6 +3,7 @@
 import { POLYGON_ZKEVM_CARDONA_TESTNET } from "@/constants";
 import { client } from "@/lib/thirdweb";
 import React, { useCallback, useEffect, useMemo } from "react";
+import { toast } from "sonner";
 import {
   useActiveAccount,
   useActiveWallet,
@@ -74,16 +75,18 @@ const WalletConnectButtonComponent = () => {
   }, [detailsModal]);
 
   const handleSwitch = useCallback(async () => {
-    console.log("switch");
     if (wallet?.switchChain) {
       try {
         await wallet.switchChain(POLYGON_ZKEVM_CARDONA_TESTNET);
       } catch (error) {
         console.error("Failed to switch chain:", error);
+        toast.error(
+          "Failed to switch chain. Please ensure your wallet supports this network.",
+        );
       }
     } else {
-      console.warn(
-        "Wallet does not support switching chain or wallet is not connected.",
+      toast.error(
+        "Your wallet does not support switching chains. Please connect a compatible wallet.",
       );
     }
   }, [wallet]);
