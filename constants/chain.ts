@@ -22,26 +22,4 @@ export const FORMA_SKETCHPAD: Chain = defineChain({
   testnet: true,
 });
 
-export const POLYGON_ZKEVM_CARDONA_TESTNET = defineChain({
-  id: 2442,
-  name: "Polygon zkEVM Cardona Testnet",
-  nativeCurrency: {
-    name: "ETH",
-    symbol: "ETH",
-    decimals: 18,
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://rpc.cardona.zkevm-rpc.com"],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: "PolygonScan",
-      url: "https://cardona-zkevm.polygonscan.com",
-    },
-  },
-  testnet: true,
-});
-
 export const FORMASCAN_URL = "https://explorer.sketchpad-1.forma.art";

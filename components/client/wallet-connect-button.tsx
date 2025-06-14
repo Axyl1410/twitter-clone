@@ -1,6 +1,6 @@
 "use client";
 
-import { POLYGON_ZKEVM_CARDONA_TESTNET } from "@/constants";
+import { FORMA_SKETCHPAD } from "@/constants";
 import { client } from "@/lib/thirdweb";
 import React, { useCallback, useEffect, useMemo } from "react";
 import { toast } from "sonner";
@@ -57,7 +57,7 @@ const WalletConnectButtonComponent = () => {
   const handleConnect = useCallback(async () => {
     await connect({
       client: client,
-      chain: POLYGON_ZKEVM_CARDONA_TESTNET,
+      chain: FORMA_SKETCHPAD,
       showThirdwebBranding: false,
       theme: "light",
       size: "compact",
@@ -68,7 +68,7 @@ const WalletConnectButtonComponent = () => {
   const handleDetail = useCallback(async () => {
     detailsModal.open({
       client: client,
-      chains: [POLYGON_ZKEVM_CARDONA_TESTNET],
+      chains: [FORMA_SKETCHPAD],
       theme: "light",
       hideSwitchWallet: true,
     });
@@ -77,7 +77,7 @@ const WalletConnectButtonComponent = () => {
   const handleSwitch = useCallback(async () => {
     if (wallet?.switchChain) {
       try {
-        await wallet.switchChain(POLYGON_ZKEVM_CARDONA_TESTNET);
+        await wallet.switchChain(FORMA_SKETCHPAD);
       } catch (error) {
         console.error("Failed to switch chain:", error);
         toast.error(
@@ -95,7 +95,7 @@ const WalletConnectButtonComponent = () => {
     <>
       {!account?.address ? (
         <ConnectButton onClick={handleConnect} />
-      ) : activeChain?.id !== POLYGON_ZKEVM_CARDONA_TESTNET.id ? (
+      ) : activeChain?.id !== FORMA_SKETCHPAD.id ? (
         <SwitchNetworkButton onClick={handleSwitch} />
       ) : (
         <AccountButton address={account.address} onClick={handleDetail} />
